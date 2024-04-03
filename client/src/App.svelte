@@ -2,13 +2,14 @@
 	import { Router, Route } from 'svelte-navigator';
 	import Landing from './routes/landing/+page.svelte';
 	import Login from './routes/Login/+page.svelte';
+	import Editor from './routes/editor/+page.svelte';
 </script>
 
 <main>
 	<Router>
-		<!-- Define your routes using Route components -->
-		<Route path="/" component={Landing} /> <!-- Example route for the home page -->
-		<Route path="/login" component={Login} /> <!-- Route for the login page -->
+		<Route path="/" component={Landing} /> 
+		<Route path="/login" component={Login} /> 
+		<Route path="/editor" component={Editor} /> 
 	</Router>
 </main>
 

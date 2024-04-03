@@ -1,10 +1,11 @@
 <script>
+    import { navigate } from 'svelte-navigator';
     let email = '';
     let password = '';
 
     async function sendData(event) {
         try {
-    const response = await fetch('http://localhost:5000/api/data', {
+        const response = await fetch('http://localhost:5000/api/data', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
@@ -14,6 +15,7 @@
 
     if (response.ok) {
         console.log('Success');
+        navigate('/editor');
     } else {
         console.error('Failed:', response.status);
     }
