@@ -15,7 +15,7 @@
 
     if (response.ok) {
         console.log('Success');
-        navigate('/editor');
+        navigate('/fileExplorer');
     } else {
         console.error('Failed:', response.status);
     }
@@ -28,7 +28,7 @@
 <main>
     <h1>Login</h1>
 
-    <form on:submit|preventDefault={sendData} method="post">
+    <form on:submit|preventDefault={sendData} method="post" action="http://localhost:5000/api/data">
         <label for="email">Email:</label>
         <input type="email" id="email" bind:value={email} required />
 

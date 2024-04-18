@@ -2,7 +2,7 @@
     import {navigate} from 'svelte-navigator'
     function exploreButton() {
     console.log('Navigating to Login');
-    navigate('login');
+    navigate('/login');
     }
 
 </script>
