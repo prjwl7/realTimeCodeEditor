@@ -1,8 +1,8 @@
 <script>
-    import { responseStore } from '../fileExplorer/+page.svelte';
+    // import { responseStore } from '../fileExplorer/+page.svelte';
 
     let theme = 'light';
-    let fileContent = ''; // Local variable to store content from responseStore
+    export let fileContent = ''; // Local variable to store content from responseStore
 
     function changeTheme() {
         theme = theme === 'light' ? 'dark' : 'light';
@@ -16,10 +16,10 @@
     }
 
     // Listen for changes in responseStore
-    $: {
-        $responseStore // reactive statement to listen to changes in responseStore
-        fileContent = $responseStore; // Update fileContent when responseStore changes
-    }
+    // $: {
+    //     $responseStore // reactive statement to listen to changes in responseStore
+    //     fileContent = $responseStore; // Update fileContent when responseStore changes
+    // }
 </script>
 <style>
     .editor {
@@ -32,14 +32,14 @@
         color: var(--editor-text-color, black);
     }
 
-    .theme-button {
+    /* .theme-button {
         margin-top: 10px;
         padding: 5px 10px;
         background-color: var(--button-bg-color, gray);
         color: var(--button-text-color, white);
         border: none;
         cursor: pointer;
-    }
+    } */
 
     #textEditor {
         width: 100%;
@@ -53,7 +53,7 @@
 <div class="editor" id="editor">
     <textarea bind:value={fileContent} placeholder="//Your Code" id="textEditor" ></textarea>
 </div>
-
+<!-- 
 <button class="theme-button" on:click={changeTheme}>
     {theme === 'light' ? 'Dark Theme' : 'Light Theme'}
-</button>
+</button> -->

@@ -8,9 +8,9 @@ CORS(app, resources={r"/*": {"origins": "http://localhost:8080"}})
 @app.route('/handleFiles', methods=['POST'])
 def handle_files():
     try:
-        result = handle_file_upload(request)
-        print(result)
-        return result
+        filename, file_content, status_code = handle_file_upload(request)
+        # Return the filename and file content as JSON
+        return jsonify({'filename': filename, 'file_content': file_content}), status_code
     except Exception as e:
         print("Error:", e)
         return 'Internal Server Error', 500

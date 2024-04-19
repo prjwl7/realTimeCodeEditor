@@ -21,6 +21,6 @@ def handle_file_upload(request):
         # Open and read the file as text
         with open(file_path, 'r') as f:
             file_content = f.read()
-        return file_content, 200
+        return filename, file_content, 200
 
     return 'Something went wrong', 500
